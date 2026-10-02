@@ -143,7 +143,19 @@ pip install -r requirements.txt   # Python 3.11 에서 검증
 	- 어떤 추가 피처도 1%p 이상 좋아지지 않아서, 가장 단순한 조합을 택했다.
 	- 선택에는 Batch 1의 CV만 썼고 Batch 2는 쓰지 않았다.
 	- Hold-out(11셀)은 극단 셀 3개 때문에 모델별로 크게 갈렸고(선형 약 21~24%, 트리·부스팅·GP 약 7~11%), 표본이 작아 참고만 했다.
-- 사전 전략과의 대응(전략 → 구현 반영)은 `notebooks/03_modeling.ipynb` 9번 섹션에 정리했다.
+
+**전략 → 구현 반영**
+
+| 사전 전략 (Day 1) | 구현 | 위치 |
+|---|---|---|
+| ΔQ(V) 분산을 핵심 피처로 | `dq_logvar` 계산, 유일한 최종 입력 | `src/features.py` |
+| 같은 프로토콜 셀이 학습·검증에 섞이지 않게 분할 | GroupShuffleSplit(Hold-out), GroupKFold(CV) | `src/train.py` |
+| 누수 방지 | 대치·스케일링을 Pipeline 안에서 학습 데이터로만 fit | `src/train.py` |
+| 공선성·과적합 대응 | 대표 피처 1개 + 규제 모델(Elastic Net) | `src/train.py` |
+| Batch 2는 마지막에 한 번만 평가 | 평가 전 선택을 기록하고 Test 1회 실행 | `results/experiment_log.md` |
+| 후보 모델 비교 | 8개 모델 + 앙상블, 같은 분할·지표 | `src/models.py` |
+
+(전체 대응은 `notebooks/03_modeling.ipynb` 9번 섹션)
 
 
 ## 성능 결과
