@@ -36,8 +36,8 @@
 
 ## 환경 설정
 ```bash
-git clone <저장소 주소>
-cd <저장소 폴더>
+git clone https://github.com/jaewon-cmd/ess-battery-project.git
+cd ess-battery-project
 pip install -r requirements.txt   # Python 3.11 에서 검증
 # 데이터는 data/README.md 를 보고 data/ 폴더에 넣는다
 ```
