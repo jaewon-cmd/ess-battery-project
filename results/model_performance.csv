@@ -1,0 +1,10 @@
+﻿구분,MAPE (%),비고
+Train (Batch 1 CV),7.4,
+Valid (Batch 1 Hold-out),21.2,
+Test (Batch 2),38.32,
+Gap (Train-Valid),13.8,(+) : 과적합 의심
+Gap (Valid-Test),17.12,(+) : 배치간 일반화 저하 의심
+Gap (Target-Test),29.22,(+) : 원논문보다 오차가 큼 / Target : 원논문 9.1%
+Test (Batch 3),13.98,추가 검증 (선택)
+Gap (Batch2-Batch3),-24.34,(+) : Batch 3 의 오차가 더 큼 (Test 성능 간 비교)
+Gap (Target-Test) [Batch 3],4.88,"Batch 3 기준, 원논문 성능 비교"

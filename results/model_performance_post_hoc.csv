@@ -1,0 +1,6 @@
+﻿구분,공식 결과 (변경 전),사후 개선 (라벨 정리 + 핵심·충전 + Ridge),비고
+Train (Batch 1 CV),7.4,8.69,정리 후 학습 30셀 기준
+Valid (Batch 1 Hold-out),21.2,10.51,정리 후 Hold-out 8셀 기준
+Test (Batch 2),38.32,43.92,Test 평가 이후의 시도 (독립 검증 아님)
+Test (Batch 3),13.98,16.24,Test 평가 이후의 시도
+Gap (Target-Test) [Batch 2],29.22,34.82,(+) : 원논문보다 오차가 큼

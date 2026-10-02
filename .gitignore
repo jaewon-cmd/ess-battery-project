@@ -1,0 +1,17 @@
+# 가상환경
+.venv/
+
+# 원본 데이터(수 GB)와 캐시는 저장소에 올리지 않음 -> data/README.md 참고
+data/*.mat
+data/cache/
+
+# 파이썬/주피터 부산물
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+
+# Day 1 제출 관련 보관본 (저장소 대상 아님)
+archive_day1/
