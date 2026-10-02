@@ -93,7 +93,7 @@ pip install -r requirements.txt   # Python 3.11 에서 검증
 | Batch 3 | −0.033 Ah | −0.017 Ah | 2.0배 | −0.80 | −4.18 |
 | 통합 | | | | **−0.89** | |
 
-![dq_logvar와 수명](results/figures/dq_logvar_vs_life.png)
+<img src="results/figures/dq_logvar_vs_life.png" alt="dq_logvar와 수명" width="380">
 
 #### 4. 충전 속도(C-rate)와 수명의 관계
 - Batch 1에서만 "고속 충전 = 단수명"이 보인다 (ρ = −0.63). 평균 C-rate <4.2C는 수명 995, >5.0C는 546 사이클.
@@ -160,7 +160,7 @@ pip install -r requirements.txt   # Python 3.11 에서 검증
 | Gap (Batch2-Batch3) | −24.34 | Batch 3 − Batch 2. (−) : Batch 3의 오차가 더 작음 |
 | Gap (Target-Test) [Batch 3] | +4.88 | Batch 3 기준 |
 
-![단계별 오차](results/figures/performance.png)
+<img src="results/figures/performance.png" alt="단계별 오차" width="380">
 
 - 읽는 법
 	- **MAPE**는 평균 오차율(%)이다. 낮을수록 좋다. 원논문 성능은 Regression 9.1%이다.
@@ -198,7 +198,7 @@ pip install -r requirements.txt   # Python 3.11 에서 검증
 	- Batch 3은 수명이 더 길고 분포도 다른데 오차는 더 작다.
 	- 배치 간 수명 분포 차이보다 "같은 ΔQ 분산에서 수명이 얼마나 짧아지는가"가 성능을 좌우한다.
 
-![예측 vs 실제](results/figures/pred_vs_actual.png)
+<img src="results/figures/pred_vs_actual.png" alt="예측 vs 실제" width="560">
 
 - **Gap (Batch2-Batch3) −24.34와 피처의 배치 과적합 가능성**
 	- 과적합이 아니라는 근거 : 같은 모델이 Batch 3(13.98%)과 Batch 2의 신규구조 셀(12.8%)에서는 비슷하게 맞는다.
